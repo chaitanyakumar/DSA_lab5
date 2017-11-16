@@ -1,7 +1,6 @@
 
 /**
- * @author chakkac5
- *implementing the interface to a generic array list 
+ * @author chakkac5 implementing the interface to a generic array list
  */
 
 @SuppressWarnings("rawtypes")
@@ -11,7 +10,6 @@ public class MyArrayList implements MyList {
 
   private int size;
   private int maxSize;
-  
 
   public MyArrayList(int maxItems) {
     maxSize = maxItems;
@@ -49,9 +47,9 @@ public class MyArrayList implements MyList {
 
     if (list.length == size) {
       Object[] list2 = new Object[size * 2];
-      
+
       copyArray(list, 0, list2, 0, list.length);
-      
+
       list = list2;
     }
     list[size] = o;
@@ -64,7 +62,7 @@ public class MyArrayList implements MyList {
   public boolean clear() {
     list = new Object[maxSize];
     size = 0;
-    
+
     return true;
   }
 
@@ -96,7 +94,7 @@ public class MyArrayList implements MyList {
         return i;
       }
     }
-    
+
     return -1;
   }
 
@@ -156,11 +154,11 @@ public class MyArrayList implements MyList {
       throw new ArithmeticException("Index out of bounds");
     }
 
-    MyArrayList subList = new MyArrayList(Math.abs(toIndex-fromIndex));
+    MyArrayList subList = new MyArrayList(Math.abs(toIndex - fromIndex));
     for (int i = fromIndex; i < toIndex; i++) {
       subList.add(list[i]);
     }
-    
+
     return subList;
   }
 
@@ -216,10 +214,9 @@ public class MyArrayList implements MyList {
     return true;
   }
 
-  private void copyArray(Object[] sourceList, int startPosition, Object[] destList, int destPosition, int noOfItemsToCopy)
-  {
-    for(int i =0; i< noOfItemsToCopy; i++)
-    {
+  private void copyArray(Object[] sourceList, int startPosition, Object[] destList, int destPosition,
+      int noOfItemsToCopy) {
+    for (int i = 0; i < noOfItemsToCopy; i++) {
       destList[destPosition + i] = sourceList[startPosition + i];
     }
   }
