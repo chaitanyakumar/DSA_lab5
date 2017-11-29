@@ -139,6 +139,8 @@ public class MyArrayList implements MyList {
     if (index < 1 || index > size) {
       throw new ArithmeticException("Index out of bounds");
     }
+    
+    list[index - 1] = element;
     return false;
   }
 
@@ -218,6 +220,7 @@ public class MyArrayList implements MyList {
       int noOfItemsToCopy) {
     for (int i = 0; i < noOfItemsToCopy; i++) {
       destList[destPosition + i] = sourceList[startPosition + i];
+      
     }
   }
 }
